@@ -5,29 +5,31 @@ import android.os.Build
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.util.Log
+import android.view.LayoutInflater
+import android.view.inputmethod.InputBinding
 import android.widget.TextView
 import android.widget.Toast
+import fr.isen.gambini.androiderestaurant.databinding.ActivityMainBinding
 
 
 class MainActivity : AppCompatActivity() {
 
-//    private val CATEGORY_KEY = "category"
+private lateinit var binding: ActivityMainBinding
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        setContentView(R.layout.activity_main)
 
-        val entrees = findViewById<TextView>(R.id.bp_Entrees)
-        val plats = findViewById<TextView>(R.id.bp_Plats)
-        val desserts = findViewById<TextView>(R.id.bp_Desserts)
+        binding = ActivityMainBinding.inflate(layoutInflater)
+        val view = binding.root
+        setContentView(view)
 
-        entrees.setOnClickListener {
+        binding.bpEntrees.setOnClickListener {
             startCategory(getString(R.string.bp_EntreesTxt))
         }
-        plats.setOnClickListener {
+        binding.bpPlats.setOnClickListener {
             startCategory(getString(R.string.bp_PlatsTxt))
         }
-        desserts.setOnClickListener {
+        binding.bpDesserts.setOnClickListener {
             startCategory(getString(R.string.bp_DessertsTxt))
         }
     }
