@@ -1,3 +1,9 @@
 <resources>
     <string name="app_name">AndroidERestaurant</string>
+    <string name="welcome_Title">Bienvenue chez</string>
+    <string name="nma_Resto_Title">Gambini Food APP</string>
+    <string name="bp_EntreesTxt">Entrees</string>
+    <string name="bp_PlatsTxt">Plats</string>
+    <string name="bp_DessertsTxt">Desserts</string>
+    <string name="categoryTitleTxt" />
 </resources>
