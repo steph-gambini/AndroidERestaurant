@@ -20,7 +20,7 @@ class CategoryActivity : AppCompatActivity() {
 
         binding.categoryTitle.text = intent.getStringExtra(MainActivity.CATEGORY_KEY)
         binding.categoryList.layoutManager = LinearLayoutManager(this)
-
+        binding.categoryList.adapter = CategoryAdapter(arrayListOf<String>("salut", "aurevoir"))
 
 
     val retAcceuil = findViewById<TextView>(R.id.return_Acceuil)
