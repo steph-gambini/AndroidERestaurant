@@ -8,6 +8,26 @@
     android:background="#CF1E11"
     tools:context=".MainActivity">
 
+    <ImageView
+        android:id="@+id/main_User"
+        android:layout_width="65dp"
+        android:layout_height="68dp"
+        android:layout_marginStart="10dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="@+id/seperate_Bottom"
+        app:srcCompat="@drawable/utilisateur" />
+
+    <ImageView
+        android:id="@+id/main_panier"
+        android:layout_width="65dp"
+        android:layout_height="63dp"
+        android:layout_marginEnd="10dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="@+id/seperate_Bottom"
+        app:srcCompat="@drawable/panier2" />
+
     <Button
         android:id="@+id/bp_Plats"
         android:layout_width="0dp"
@@ -59,22 +79,12 @@
         app:layout_constraintTop_toTopOf="parent"
         app:srcCompat="@drawable/android_image" />
 
-    <ImageView
-        android:id="@+id/logo_User"
-        android:layout_width="69dp"
-        android:layout_height="74dp"
-        android:layout_marginTop="12dp"
-        android:layout_marginEnd="7dp"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:srcCompat="@drawable/utilisateur" />
-
     <TextView
         android:id="@+id/name_Resto_Title"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="50dp"
-        android:layout_marginEnd="80dp"
+        android:layout_marginEnd="30dp"
         android:text="Gambini Food APP"
         android:textColor="#FFFDFD"
         android:textSize="24sp"

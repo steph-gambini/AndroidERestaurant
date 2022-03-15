@@ -9,6 +9,16 @@
     tools:context=".CategoryActivity">
 
     <ImageView
+        android:id="@+id/category_user"
+        android:layout_width="65dp"
+        android:layout_height="68dp"
+        android:layout_marginStart="10dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="@+id/seperate_Bottom2"
+        app:srcCompat="@drawable/utilisateur" />
+
+    <ImageView
         android:id="@+id/logo_Resto2"
         android:layout_width="74dp"
         android:layout_height="86dp"
@@ -36,7 +46,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="50dp"
-        android:layout_marginEnd="80dp"
+        android:layout_marginEnd="30dp"
         android:text="Gambini Food APP"
         android:textColor="#FFFDFD"
         android:textSize="24sp"
@@ -97,16 +107,6 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="@+id/separate_Top2" />
 
-    <ImageView
-        android:id="@+id/imageView"
-        android:layout_width="69dp"
-        android:layout_height="74dp"
-        android:layout_marginTop="12dp"
-        android:layout_marginEnd="7dp"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:srcCompat="@drawable/panier" />
-
     <Button
         android:id="@+id/return_Acceuil"
         android:layout_width="wrap_content"
@@ -117,4 +117,15 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="@+id/seperate_Bottom2" />
+
+    <ImageView
+        android:id="@+id/category_panier_icon"
+        android:layout_width="65dp"
+        android:layout_height="63dp"
+        android:layout_marginEnd="10dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="@+id/seperate_Bottom2"
+        app:srcCompat="@drawable/panier2" />
+
 </androidx.constraintlayout.widget.ConstraintLayout>
