@@ -5,7 +5,7 @@
     android:id="@+id/categoryPage"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="#CF1E11"
+    android:background="@drawable/background2"
     tools:context=".CategoryActivity">
 
     <ImageView
@@ -16,39 +16,29 @@
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="@+id/seperate_Bottom2"
-        app:srcCompat="@drawable/utilisateur" />
-
-    <ImageView
-        android:id="@+id/logo_Resto2"
-        android:layout_width="74dp"
-        android:layout_height="86dp"
-        android:layout_marginStart="5dp"
-        android:layout_marginTop="10dp"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:srcCompat="@drawable/android_image" />
+        app:srcCompat="@drawable/user1" />
 
     <TextView
         android:id="@+id/welcome_Title2"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginStart="80dp"
-        android:layout_marginTop="15dp"
+        android:layout_marginTop="33dp"
+        android:layout_marginEnd="60dp"
         android:text="Bienvenue chez"
-        android:textColor="#FBFAFA"
-        android:textSize="16sp"
+        android:textColor="#8AAEED"
+        android:textSize="20sp"
         android:textStyle="bold"
-        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
     <TextView
         android:id="@+id/name_Resto_Title2"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="50dp"
+        android:layout_marginTop="60dp"
         android:layout_marginEnd="30dp"
         android:text="Gambini Food APP"
-        android:textColor="#FFFDFD"
+        android:textColor="#8AAEED"
         android:textSize="24sp"
         android:textStyle="bold"
         app:layout_constraintEnd_toEndOf="parent"
@@ -59,7 +49,7 @@
         android:layout_width="wrap_content"
         android:layout_height="5dp"
         android:layout_marginStart="50dp"
-        android:layout_marginTop="120dp"
+        android:layout_marginTop="100dp"
         android:layout_marginEnd="50dp"
         android:background="#9FF8F6F6"
         app:layout_constraintEnd_toEndOf="parent"
@@ -72,7 +62,7 @@
         android:layout_height="5dp"
         android:layout_marginStart="50dp"
         android:layout_marginEnd="50dp"
-        android:layout_marginBottom="120dp"
+        android:layout_marginBottom="80dp"
         android:background="#9FF8F6F6"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
@@ -81,29 +71,19 @@
     <TextView
         android:id="@+id/categoryTitle"
         android:layout_width="0dp"
-        android:layout_height="60dp"
+        android:layout_height="wrap_content"
         android:layout_marginStart="50dp"
         android:layout_marginEnd="50dp"
-        android:layout_marginBottom="340dp"
-        android:background="#F0D38C88"
+        android:layout_marginBottom="465dp"
+        android:background="@null"
         android:gravity="center"
         android:textAlignment="center"
         android:textAllCaps="true"
-        android:textColor="#FAF7F7"
+        android:textColor="@color/black"
+        android:textSize="20sp"
         app:layout_constraintBottom_toBottomOf="@+id/seperate_Bottom2"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="1.0"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="@+id/separate_Top2" />
-
-    <androidx.recyclerview.widget.RecyclerView
-        android:id="@+id/categoryList"
-        android:layout_width="0dp"
-        android:layout_height="0dp"
-        android:layout_marginTop="120dp"
-        android:layout_marginBottom="20dp"
-        app:layout_constraintBottom_toBottomOf="@+id/seperate_Bottom2"
-        app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="@+id/separate_Top2" />
 
@@ -127,5 +107,20 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintTop_toTopOf="@+id/seperate_Bottom2"
         app:srcCompat="@drawable/panier2" />
+
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/categoryRecycler"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:layout_marginStart="20dp"
+        android:layout_marginTop="10dp"
+        android:layout_marginEnd="20dp"
+        android:layout_marginBottom="10dp"
+        android:textAlignment="gravity"
+        app:layout_constraintBottom_toTopOf="@+id/seperate_Bottom2"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/categoryTitle"
+        app:layout_constraintVertical_bias="0.058" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>
