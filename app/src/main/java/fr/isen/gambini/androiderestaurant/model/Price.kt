@@ -8,7 +8,7 @@ data class Price(
     val price: String,
     val create_date: String,
     val update_date: String,
-    val size: Size): Serializable
+    val size: String): Serializable
 
 enum class Size {
     Grande,

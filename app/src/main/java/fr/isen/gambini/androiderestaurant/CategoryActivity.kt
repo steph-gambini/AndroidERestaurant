@@ -10,12 +10,12 @@ import com.android.volley.Response
 import com.android.volley.toolbox.JsonObjectRequest
 import com.android.volley.toolbox.Volley
 import com.google.gson.Gson
-import com.squareup.picasso.Picasso
 import fr.isen.gambini.androiderestaurant.databinding.ActivityCategoryBinding
 import fr.isen.gambini.androiderestaurant.model.Data
 import org.json.JSONObject
 
 class CategoryActivity : AppCompatActivity() {
+
     companion object{
         const val DETAILS_KEY = "String"
     }
@@ -32,13 +32,13 @@ class CategoryActivity : AppCompatActivity() {
         binding.categoryRecycler.layoutManager = LinearLayoutManager(this)
         binding.categoryRecycler.adapter = CategoryAdapter(arrayListOf()) {}
 
-
         val retAcceuil = findViewById<TextView>(R.id.return_Acceuil)
 
         retAcceuil.setOnClickListener {
             val intent = Intent(this, MainActivity::class.java)
             startActivity(intent)
          }
+
         binding.categoryRecycler.adapter = CategoryAdapter(arrayListOf()) {}
         requestPost(cat)
     }
@@ -47,18 +47,18 @@ class CategoryActivity : AppCompatActivity() {
 
         val queue = Volley.newRequestQueue(this)
         val url = "http://test.api.catering.bluecodegames.com/menu"
-
         val requestBody = JSONObject("{\"id_shop\":1}")
         val req =
             object : JsonObjectRequest(Method.POST, url,requestBody,
                 Response.Listener { response ->
                     Log.d("API00", "json => $response")
+
                     val dataLoad = Gson().fromJson(response.toString(),Data::class.java)
                     val items = dataLoad.data.firstOrNull{it.name_fr==cat}?.items
                         ?: arrayListOf()
-                    binding.categoryRecycler.adapter = CategoryAdapter(items?: arrayListOf()) {
-                        val intent = Intent(this, DetailsActivity::class.java)
-                        intent.putExtra("item", it)
+                        binding.categoryRecycler.adapter = CategoryAdapter(items?: arrayListOf()) {
+                        val intent = Intent(this, DetailActivity::class.java)
+                        intent.putExtra(DETAILS_KEY, it)
                         startActivity(intent)
                     }
                 },
@@ -66,8 +66,7 @@ class CategoryActivity : AppCompatActivity() {
                     Log.d("API00", "error => $error")
                 }
 
-            ){
-            }
+            ){}
         queue.add(req)
     }
 
