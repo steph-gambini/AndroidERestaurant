@@ -52,23 +52,20 @@ class CategoryActivity : AppCompatActivity() {
             object : JsonObjectRequest(Method.POST, url,requestBody,
                 Response.Listener { response ->
                     Log.d("API00", "json => $response")
-
                     val dataLoad = Gson().fromJson(response.toString(),Data::class.java)
                     val items = dataLoad.data.firstOrNull{it.name_fr==cat}?.items
                         ?: arrayListOf()
                         binding.categoryRecycler.adapter = CategoryAdapter(items?: arrayListOf()) {
                         val intent = Intent(this, DetailActivity::class.java)
                         intent.putExtra(DETAILS_KEY, it)
-                        startActivity(intent)
+                            startActivity(intent)
                     }
                 },
                 Response.ErrorListener { error ->
                     Log.d("API00", "error => $error")
                 }
-
             ){}
         queue.add(req)
     }
-
 }
 

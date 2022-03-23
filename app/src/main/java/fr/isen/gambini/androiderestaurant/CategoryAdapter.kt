@@ -9,7 +9,7 @@ import androidx.recyclerview.widget.RecyclerView
 import com.squareup.picasso.Picasso
 import fr.isen.gambini.androiderestaurant.model.Item
 
-class CategoryAdapter (val items: List<Item>, val onItemClick: (Item) -> Unit) :
+class CategoryAdapter (private val items: List<Item>, val onItemClick: (Item) -> Unit) :
     RecyclerView.Adapter<CategoryAdapter.CategoryViewHolder>() {
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): CategoryViewHolder {
@@ -21,7 +21,9 @@ class CategoryAdapter (val items: List<Item>, val onItemClick: (Item) -> Unit) :
 
     override fun onBindViewHolder(holder: CategoryViewHolder,position: Int) {
         holder.platTitle.text = items[position].name_fr
-        Picasso.get().load(items[position].images[0].ifEmpty { null }).error(R.drawable.chef).into(holder.imagemenu);
+
+        Picasso.get().load(items[position].images[0].ifEmpty { null }).error(R.drawable.chef).into(holder.imageMenu);
+
         holder.itemView.setOnClickListener {
             onItemClick(items[position])
         }
@@ -32,7 +34,7 @@ class CategoryAdapter (val items: List<Item>, val onItemClick: (Item) -> Unit) :
 
     class CategoryViewHolder(ItemView: View) : RecyclerView.ViewHolder(ItemView){
         val platTitle : TextView = itemView.findViewById(R.id.PlatTitle)
-        var imagemenu : ImageView = itemView.findViewById(R.id.imageView)
+        var imageMenu : ImageView = itemView.findViewById(R.id.imageView)
         val price : TextView = itemView.findViewById(R.id.textPrice)
     }
 }
