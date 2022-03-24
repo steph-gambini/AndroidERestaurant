@@ -4,7 +4,52 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:background="@drawable/background2"
     tools:context=".DetailActivity">
+
+    <Button
+        android:id="@+id/return_menu"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/menu"
+        app:cornerRadius="50dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="@+id/seperate_Bottom3" />
+
+    <View
+        android:id="@+id/seperate_Bottom3"
+        android:layout_width="wrap_content"
+        android:layout_height="5dp"
+        android:layout_marginStart="50dp"
+        android:layout_marginEnd="50dp"
+        android:layout_marginBottom="80dp"
+        android:background="#9FF8F6F6"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent" />
+
+    <View
+        android:id="@+id/seperate_Bottom4"
+        android:layout_width="300dp"
+        android:layout_height="5dp"
+        android:layout_marginTop="52dp"
+        android:background="#9FF8F6F6"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/textDetail" />
+
+    <View
+        android:id="@+id/seperate_Bottom5"
+        android:layout_width="300dp"
+        android:layout_height="5dp"
+        android:layout_marginTop="15dp"
+        android:background="#9FF8F6F6"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.378"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/viewSlider" />
 
     <TextView
         android:id="@+id/titleFood"
@@ -44,4 +89,58 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
+
+    <Button
+        android:id="@+id/bp_decr"
+        android:layout_width="48dp"
+        android:layout_height="49dp"
+        android:layout_marginTop="80dp"
+        android:layout_marginEnd="50dp"
+        android:text="@string/moins"
+        android:textAlignment="center"
+        android:textSize="20sp"
+        android:textStyle="bold"
+        app:cornerRadius="50dp"
+        app:layout_constraintEnd_toStartOf="@+id/nb_quantite"
+        app:layout_constraintTop_toBottomOf="@+id/textDetail" />
+
+    <Button
+        android:id="@+id/bp_incr"
+        android:layout_width="48dp"
+        android:layout_height="49dp"
+        android:layout_marginStart="50dp"
+        android:layout_marginTop="80dp"
+        android:text="@string/plus"
+        android:textAlignment="center"
+        android:textSize="20sp"
+        android:textStyle="normal"
+        app:cornerRadius="50dp"
+        app:layout_constraintStart_toEndOf="@+id/nb_quantite"
+        app:layout_constraintTop_toBottomOf="@+id/textDetail" />
+
+    <TextView
+        android:id="@+id/nb_quantite"
+        android:layout_width="50dp"
+        android:layout_height="50dp"
+        android:layout_marginTop="95dp"
+        android:autofillHints="0"
+        android:ems="10"
+        android:text="@string/_1"
+        android:textAlignment="center"
+        android:textColor="@color/black"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/textDetail" />
+
+    <Button
+        android:id="@+id/bp_ajout_panier"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="120dp"
+        android:text="@string/ajouter_au_panier"
+        app:cornerRadius="50dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent" />
+
 </androidx.constraintlayout.widget.ConstraintLayout>

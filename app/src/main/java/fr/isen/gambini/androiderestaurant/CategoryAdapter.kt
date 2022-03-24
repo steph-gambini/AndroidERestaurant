@@ -1,5 +1,6 @@
 package fr.isen.gambini.androiderestaurant
 
+import android.annotation.SuppressLint
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
@@ -19,7 +20,8 @@ class CategoryAdapter (private val items: List<Item>, val onItemClick: (Item) ->
         return CategoryViewHolder(view)
     }
 
-    override fun onBindViewHolder(holder: CategoryViewHolder,position: Int) {
+    @SuppressLint("SetTextI18n")
+    override fun onBindViewHolder(holder: CategoryViewHolder, position: Int) {
         holder.platTitle.text = items[position].name_fr
 
         Picasso.get().load(items[position].images[0].ifEmpty { null }).error(R.drawable.chef).into(holder.imageMenu);

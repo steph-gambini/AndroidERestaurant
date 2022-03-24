@@ -9,4 +9,14 @@
     <string name="hello_blank_fragment">Hello blank fragment</string>
     <string name="titleFood">textTitle</string>
     <string name="textDetail">textDetail</string>
+    <string name="bp_decr">-</string>
+    <string name="bp_incr">+</string>
+    <string name="bp_aujout_panier">Ajouter au panier</string>
+    <string name="return_menu">MENU</string>
+    <string name="nb_quantite">1</string>
+    <string name="_1">1</string>
+    <string name="moins">-</string>
+    <string name="plus">+</string>
+    <string name="menu">MENU</string>
+    <string name="ajouter_au_panier">Ajouter au panier :</string>
 </resources>

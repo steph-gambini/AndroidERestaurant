@@ -3,6 +3,7 @@ package fr.isen.gambini.androiderestaurant
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.util.Log
+import android.widget.TextView
 import androidx.viewpager2.widget.ViewPager2
 import fr.isen.gambini.androiderestaurant.databinding.ActivityDetailBinding
 import fr.isen.gambini.androiderestaurant.model.Item
@@ -26,5 +27,33 @@ class DetailActivity : AppCompatActivity() {
         binding.viewSlider.orientation = ViewPager2.ORIENTATION_HORIZONTAL
         binding.viewSlider.adapter = DetailImagePager(this,item.images)
 
+        val retMenu = findViewById<TextView>(R.id.return_menu)
+        retMenu.setOnClickListener {
+            finish()
+        }
+       quantiteMenu()
     }
+
+        fun quantiteMenu(){
+        var quantite = 1
+
+        binding.bpDecr.setOnClickListener {
+            if (quantite > 1){
+                quantite--
+            }
+            refreshTextView(quantite)
+        }
+
+        binding.bpIncr.setOnClickListener {
+            quantite++
+            refreshTextView(quantite)
+        }
+    }
+
+        fun refreshTextView(quantite : Int){
+        val menu = intent.getSerializableExtra(CategoryActivity.DETAILS_KEY) as Item
+        val price = quantite * menu.prices[0].price.toFloat()
+        binding.nbQuantite.text = quantite.toString()
+ //      binding.priceButton.text = price.toString() + " €"
+        }
 }
