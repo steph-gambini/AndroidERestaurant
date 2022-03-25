@@ -32,6 +32,7 @@ class DetailActivity : AppCompatActivity() {
             finish()
         }
        quantiteMenu()
+        refreshTextView(1)
     }
 
         fun quantiteMenu(){
@@ -54,6 +55,6 @@ class DetailActivity : AppCompatActivity() {
         val menu = intent.getSerializableExtra(CategoryActivity.DETAILS_KEY) as Item
         val price = quantite * menu.prices[0].price.toFloat()
         binding.nbQuantite.text = quantite.toString()
- //      binding.priceButton.text = price.toString() + " €"
+       binding.bpAjoutPanier.text = "Ajouter au panier : " + price.toString() + " €"
         }
 }
