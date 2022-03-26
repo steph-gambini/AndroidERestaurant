@@ -6,6 +6,8 @@ import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.util.Log
 import android.view.LayoutInflater
+import android.view.Menu
+import android.view.MenuItem
 import android.view.inputmethod.InputBinding
 import android.widget.TextView
 import android.widget.Toast
@@ -13,8 +15,23 @@ import fr.isen.gambini.androiderestaurant.databinding.ActivityMainBinding
 
 
 class MainActivity : AppCompatActivity() {
-
 private lateinit var binding: ActivityMainBinding
+
+    override fun onCreateOptionsMenu(menu: Menu): Boolean {
+        menuInflater.inflate(R.menu.main_menu, menu)
+        return true
+    }
+    override fun onOptionsItemSelected(item: MenuItem): Boolean = when (item.itemId) {
+        R.id.bp_panier -> {
+            val intent = Intent(this, PanierActivity::class.java)
+         //   intent.putExtra(CATEGORY_KEY, category)
+            startActivity(intent)
+
+            true
+        }
+        else -> super.onOptionsItemSelected(item)
+    }
+
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -31,6 +48,7 @@ private lateinit var binding: ActivityMainBinding
         }
         binding.bpDesserts.setOnClickListener {
             startCategory(getString(R.string.bp_DessertsTxt))
+
         }
     }
 

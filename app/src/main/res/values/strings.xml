@@ -19,4 +19,6 @@
     <string name="plus">+</string>
     <string name="menu">MENU</string>
     <string name="ajouter_au_panier">Ajouter au panier :</string>
+    <string name="bp_panier">PANIER</string>
+    <string name="titlePanier">Panier</string>
 </resources>

@@ -16,6 +16,9 @@
             android:name=".CategoryActivity"
             android:exported="false" />
         <activity
+            android:name=".PanierActivity"
+            android:exported="false" />
+        <activity
             android:name=".DetailActivity"
             android:exported="false" />
         <activity
