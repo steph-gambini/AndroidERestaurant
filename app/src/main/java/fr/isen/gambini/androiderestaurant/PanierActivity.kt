@@ -5,12 +5,10 @@ import fr.isen.gambini.androiderestaurant.databinding.MenuPanierBinding
 import android.annotation.SuppressLint
 import android.view.MenuItem
 import androidx.recyclerview.widget.LinearLayoutManager
-import fr.isen.gambini.androiderestaurant.databinding.PanierCellBinding
-import fr.isen.gambini.androiderestaurant.model.PanierItem
 
 class PanierActivity: AppCompatActivity() {
     private lateinit var binding: MenuPanierBinding
-    private lateinit var binding1: PanierCellBinding
+
     override fun onOptionsItemSelected(item: MenuItem): Boolean {
         return true
     }

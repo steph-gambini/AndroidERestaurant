@@ -1,16 +1,11 @@
 package fr.isen.gambini.androiderestaurant
 
 import android.content.Intent
-import android.os.Build
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.util.Log
-import android.view.LayoutInflater
 import android.view.Menu
 import android.view.MenuItem
-import android.view.inputmethod.InputBinding
-import android.widget.TextView
-import android.widget.Toast
 import fr.isen.gambini.androiderestaurant.databinding.ActivityMainBinding
 
 

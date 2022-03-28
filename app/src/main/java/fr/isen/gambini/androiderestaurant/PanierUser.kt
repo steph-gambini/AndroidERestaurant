@@ -4,9 +4,7 @@ import fr.isen.gambini.androiderestaurant.model.Panier
 import fr.isen.gambini.androiderestaurant.model.PanierItem
 import android.annotation.SuppressLint
 import android.content.Context
-import android.util.Log
 import com.google.gson.Gson
-import com.google.gson.JsonArray
 import java.io.File
 import java.io.FileReader
 import java.io.FileWriter
@@ -20,10 +18,6 @@ object PanierUser{
     private var init = 0
     private lateinit var context: Context
 
-    fun destroy(item: PanierItem){
-        val existElem = content.first{it.name_fr == item.name_fr}
-        content.remove(existElem)
-    }
     fun update(item : PanierItem){
         if(item.quantity == 0) return
         if(content.any{it.name_fr == item.name_fr}){
