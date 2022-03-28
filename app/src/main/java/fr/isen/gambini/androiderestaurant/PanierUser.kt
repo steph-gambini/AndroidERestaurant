@@ -20,13 +20,17 @@ object PanierUser{
     private var init = 0
     private lateinit var context: Context
 
+    fun destroy(item: PanierItem){
+        val existElem = content.first{it.name_fr == item.name_fr}
+        content.remove(existElem)
+    }
     fun update(item : PanierItem){
         if(item.quantity == 0) return
         if(content.any{it.name_fr == item.name_fr}){
             val existElem = content.first{it.name_fr == item.name_fr}
             existElem.quantity += item.quantity
-            if(existElem.quantity<=0)
-                content.remove(existElem)
+          //  if(existElem.quantity<=0)
+              //  content.remove(existElem)
         }else{
             if(item.quantity>0)
                 content.add(item)

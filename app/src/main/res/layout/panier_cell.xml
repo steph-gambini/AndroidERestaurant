@@ -6,34 +6,98 @@
     android:layout_width="match_parent"
     android:layout_height="wrap_content">
 
+    <Button
+        android:id="@+id/bp_incr_panier"
+        android:layout_width="48dp"
+        android:layout_height="49dp"
+        android:layout_marginStart="10dp"
+        android:text="@string/plus"
+        android:textAlignment="center"
+        android:textSize="20sp"
+        android:textStyle="normal"
+        app:cornerRadius="50dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toEndOf="@+id/nb_quantite_panier" />
+
+    <TextView
+        android:id="@+id/nb_quantite_panier"
+        android:layout_width="50dp"
+        android:layout_height="50dp"
+        android:layout_marginStart="10dp"
+        android:autofillHints="0"
+        android:ems="10"
+        android:text="@string/_1"
+        android:textAlignment="center"
+        android:textColor="@color/black"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toEndOf="@+id/bp_decr_panier" />
+
+    <Button
+        android:id="@+id/bp_decr_panier"
+        android:layout_width="48dp"
+        android:layout_height="49dp"
+        android:layout_marginStart="10dp"
+        android:text="@string/moins"
+        android:textAlignment="center"
+        android:textSize="20sp"
+        android:textStyle="bold"
+        app:cornerRadius="50dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toEndOf="@+id/btPanier" />
+
+    <View
+        android:id="@+id/separate_Top4"
+        android:layout_width="wrap_content"
+        android:layout_height="5dp"
+        android:background="#9FF8F6F6"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.53"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
     <TextView
         android:id="@+id/pricePanier"
         android:layout_width="170dp"
         android:layout_height="wrap_content"
+        android:layout_marginStart="10dp"
         android:gravity="center"
         android:padding="8dp"
-        app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintStart_toEndOf="@+id/btPanier"
-        app:layout_constraintTop_toTopOf="parent" />
+        app:layout_constraintTop_toBottomOf="@+id/title_menu_panier" />
 
-    <Button
+    <ImageButton
         android:id="@+id/btPanier"
-        android:layout_width="0dp"
-        android:layout_height="wrap_content"
+        android:layout_width="97dp"
+        android:layout_height="92dp"
+        android:layout_marginStart="10dp"
+        android:background="@null"
+        android:scaleType="centerInside"
         app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toStartOf="@+id/pricePanier"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        app:layout_constraintTop_toBottomOf="@+id/title_menu_panier"
+        tools:ignore="SpeakableTextPresentCheck" />
 
-    <Button
-        android:id="@+id/btLessPanier"
+    <ImageButton
+        android:id="@+id/btDestroyPanier"
         style="@style/Widget.AppCompat.Button.Small"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="-"
+        android:layout_width="48dp"
+        android:layout_height="48dp"
+        android:background="@drawable/poubelle1"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toEndOf="@+id/pricePanier"
+        app:layout_constraintTop_toTopOf="parent"
+        tools:ignore="SpeakableTextPresentCheck" />
+
+    <TextView
+        android:id="@+id/title_menu_panier"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="10dp"
+        android:layout_marginTop="10dp"
+        android:text="TextView"
+        android:textColor="@color/black"
+        app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

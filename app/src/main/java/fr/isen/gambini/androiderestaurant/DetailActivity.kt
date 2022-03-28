@@ -73,7 +73,6 @@ class DetailActivity : AppCompatActivity() {
             binding.bpAjoutPanier.setOnClickListener{
                 val itemPanier  = PanierItem(item.name_fr,quantite,item.prices[0].price.toFloat(),item.images[0])
                 PanierUser.update(itemPanier)
-              //  ShoppingCart.updateCart(ItemCart(item.images[0],item.name_fr,quantity,item.prices[0].price.toFloat()),this)
               //  setupBadge()
                 Snackbar.make(binding.root,"$quantite ${item.name_fr} bien ajouté au panier", Snackbar.LENGTH_SHORT ).show()
             }

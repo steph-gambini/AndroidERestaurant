@@ -21,4 +21,7 @@
     <string name="ajouter_au_panier">Ajouter au panier :</string>
     <string name="bp_panier">PANIER</string>
     <string name="titlePanier">Panier</string>
+    <string name="bp_decr_panier">moins</string>
+    <string name="bp_incr_panier">plus</string>
+    <string name="btDestroyPanier">destroy</string>
 </resources>

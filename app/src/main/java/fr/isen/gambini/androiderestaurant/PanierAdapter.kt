@@ -1,5 +1,5 @@
 package fr.isen.gambini.androiderestaurant
-
+import fr.isen.gambini.androiderestaurant.PanierUser
 import fr.isen.gambini.androiderestaurant.model.PanierItem
 import android.annotation.SuppressLint
 import android.view.LayoutInflater
@@ -19,9 +19,18 @@ class PanierAdapter(private val datas : List<PanierItem>, private val listener: 
     class ViewHolder(private val binding:PanierCellBinding ,private val listener: (PanierItem) -> Unit) : RecyclerView.ViewHolder(binding.root) {
         @SuppressLint("SetTextI18n")
         fun bind(data : PanierItem){
-            binding.btPanier.text = data.name_fr
-            binding.pricePanier.text = "${data.quantity} * ${data.unit_price}€ : ${data.unit_price*data.quantity}€"
-            binding.btLessPanier.setOnClickListener { listener(data) }
+            Picasso.get().load(data.image.ifEmpty { null }).error(R.drawable.chef).into(binding.btPanier);
+            binding.titleMenuPanier.text = data.name_fr
+            binding.pricePanier.text = "${data.quantity} x ${data.unit_price}€ : ${data.unit_price*data.quantity}€"
+            binding.bpDecrPanier.setOnClickListener { listener(data) }
+            binding.bpIncrPanier.setOnClickListener{
+                data.quantity=data.quantity+2
+            listener(data)}
+
+            binding.nbQuantitePanier.text = data.quantity.toString()
+            val existElem = PanierUser.content.first{it.name_fr == data.name_fr}
+            binding.btDestroyPanier.setOnClickListener{ PanierUser.content.remove(existElem)
+            listener(data)}
         }
     }
 
