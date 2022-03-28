@@ -5,17 +5,23 @@ import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.util.Log
+import android.view.LayoutInflater
 import android.view.Menu
 import android.view.MenuItem
+import android.view.View
 import android.widget.TextView
 import androidx.viewpager2.widget.ViewPager2
+import com.google.android.material.bottomnavigation.BottomNavigationItemView
 import com.google.android.material.snackbar.Snackbar
 import fr.isen.gambini.androiderestaurant.databinding.ActivityDetailBinding
 import fr.isen.gambini.androiderestaurant.model.Item
 import fr.isen.gambini.androiderestaurant.model.PanierItem
+import fr.isen.gambini.androiderestaurant.databinding.BadgeTextBinding
 
 class DetailActivity : AppCompatActivity() {
     private lateinit var binding: ActivityDetailBinding
+    private lateinit var notificationsBadges: View
+    private var count: Int = 1
 
     override fun onCreateOptionsMenu(menu: Menu): Boolean {
         menuInflater.inflate(R.menu.main_menu, menu)
@@ -73,7 +79,7 @@ class DetailActivity : AppCompatActivity() {
             binding.bpAjoutPanier.setOnClickListener{
                 val itemPanier  = PanierItem(item.name_fr,quantite,item.prices[0].price.toFloat(),item.images[0])
                 PanierUser.update(itemPanier)
-              //  setupBadge()
+              //  updateBadgeCount(count++)
                 Snackbar.make(binding.root,"$quantite ${item.name_fr} bien ajouté au panier", Snackbar.LENGTH_SHORT ).show()
             }
     }
@@ -85,5 +91,16 @@ class DetailActivity : AppCompatActivity() {
         binding.nbQuantite.text = quantite.toString()
        binding.bpAjoutPanier.text = "Ajouter au panier : " + price.toString() + " €"
         }
+
+    /*    fun updateBadgeCount(count: Int =0){
+            val itemView = navigation.getChildAt (1) as? BottomNavigationItemView
+
+            notificationsBadges = LayoutInflater.from(this)
+                .inflate(R.layout.badge_text,itemView,true)
+
+            notificationsBadges?.notification_badge?.text = count.toString()
+
+            navigation?.addView(notificationsBadges)
+        }*/
 
 }

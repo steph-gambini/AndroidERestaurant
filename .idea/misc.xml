@@ -4,6 +4,7 @@
     <option name="filePathToZoomLevelMap">
       <map>
         <entry key="..\:/ITII/ANDROID/app/src/main/res/drawable-v24/ic_launcher_foreground.xml" value="0.121" />
+        <entry key="..\:/ITII/ANDROID/app/src/main/res/drawable/badgecount.xml" value="0.1" />
         <entry key="..\:/ITII/ANDROID/app/src/main/res/drawable/bpdecremente.xml" value="0.2265" />
         <entry key="..\:/ITII/ANDROID/app/src/main/res/drawable/ic_baseline_account_circle_24.xml" value="0.236" />
         <entry key="..\:/ITII/ANDROID/app/src/main/res/drawable/ic_baseline_add_shopping_cart_24.xml" value="0.236" />
