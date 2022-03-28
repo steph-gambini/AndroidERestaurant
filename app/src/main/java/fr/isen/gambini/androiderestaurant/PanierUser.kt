@@ -23,8 +23,7 @@ object PanierUser{
         if(content.any{it.name_fr == item.name_fr}){
             val existElem = content.first{it.name_fr == item.name_fr}
             existElem.quantity += item.quantity
-          //  if(existElem.quantity<=0)
-              //  content.remove(existElem)
+
         }else{
             if(item.quantity>0)
                 content.add(item)
